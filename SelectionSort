@@ -1,0 +1,13 @@
+def selectionSort(array):
+    startIndex = 0
+	while startIndex < len(array) - 1:
+		pointer = startIndex
+		for i in range(startIndex + 1, len(array)):
+			if array[pointer] > array[i]:
+				pointer = i 
+		swap(startIndex, pointer, array)
+		startIndex += 1
+	return array
+		
+def swap(i, j, array):
+	array[i], array[j] = array[j], array[i]
