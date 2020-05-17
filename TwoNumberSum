@@ -1,0 +1,42 @@
+def twoNumberSum(array, targetSum):
+	result = []
+    for i in range(0, len(array) - 1):
+		for j in range(i + 1, len(array)):
+			if array[i] + array[j] == targetSum:
+				result.append(array[i])
+				result.append(array[j])
+				return result
+	return result
+				
+        
+        
+def twoNumberSum(array, targetSum):
+	result = []
+    array.sort()
+	leftPoint = 0
+	rightPoint = len(array) - 1
+	while rightPoint > leftPoint:
+		total = array[leftPoint] + array[rightPoint]
+		if total == targetSum:
+			result.append(array[leftPoint])
+			result.append(array[rightPoint])
+			return result
+		elif total < targetSum:
+			leftPoint += 1
+		else:
+			rightPoint -= 1
+	return result
+
+
+
+
+def twoNumberSum(array, targetSum):
+    nums = {}
+	for num in array:
+		if targetSum - num in nums:
+			return [targetSum - num, num]
+		else:
+			nums[num] = True
+	return []
+
+
