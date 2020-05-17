@@ -1,0 +1,12 @@
+def caesarCipherEncryptor(string, key):
+	array = []
+    newKey = key % 26
+	for letter in string:
+		newLetter = ord(letter)
+		array.append(updatedLetter(newLetter, newKey))
+	return "".join(array)
+		
+def updatedLetter(letter, newKey):
+	encryptedLetter = letter + newKey
+	return chr(encryptedLetter) if encryptedLetter <= 122 else chr(96 + (encryptedLetter % 122))
+	
