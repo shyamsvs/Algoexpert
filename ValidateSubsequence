@@ -1,0 +1,23 @@
+def isValidSubsequence(array, sequence):
+    arrayPtr = 0
+	seqPtr = 0
+	while arrayPtr < len(array) and seqPtr < len(sequence):
+		if array[arrayPtr] == sequence[seqPtr]:
+			arrayPtr += 1
+			seqPtr += 1
+		else:
+			arrayPtr += 1
+	if seqPtr == len(sequence):
+		return True
+	else:
+		return False
+
+
+def isValidSubsequence(array, sequence):
+    arrayPtr = 0
+	seqPtr = 0
+	while arrayPtr < len(array) and seqPtr < len(sequence):
+		if array[arrayPtr] == sequence[seqPtr]:
+			seqPtr += 1
+		arrayPtr += 1
+	return seqPtr == len(sequence)
