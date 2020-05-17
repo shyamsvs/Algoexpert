@@ -1,0 +1,10 @@
+def smallestDifference(arrayOne, arrayTwo):
+    difference = 9999999
+	for i in range(len(arrayOne)):
+		for j in range(len(arrayTwo)):
+			diff = abs(arrayOne[i] - arrayTwo[j])
+			if diff < difference:
+				difference = diff
+				a = arrayOne[i]
+				b = arrayTwo[j]
+	return [a, b]
