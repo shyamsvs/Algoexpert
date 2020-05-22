@@ -1,0 +1,12 @@
+def isMonotonic(array):
+    checki = 1
+	checkd = 1
+	if len(array) == 0:
+		return True
+	for i in range(len(array) - 1):
+		if array[i] >= array[i+1]:
+			checki += 1
+	for i in range(len(array) - 1):
+		if array[i] <= array[i+1]:
+			checkd += 1
+	return checki == len(array) or checkd == len(array)
