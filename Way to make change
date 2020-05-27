@@ -1,0 +1,8 @@
+def numberOfWaysToMakeChange(n, denoms):
+    amo = [0 for i in range(n+1)]
+	amo[0] = 1
+	for den in denoms:
+		for am in range(1,n+1):
+			if den <= am:
+				amo[am] += amo[am-den]
+	return amo[n]
